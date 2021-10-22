@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Abakada Studios Assessment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1 >
+            Steam Wish List
+        </h1>
+        <button id="addBtn" type="button" class="button"> Add Game </button>
+        <p class="counter" id="counter"></p>
+    </div>
+
+    
+
+    <div id="addModal" class="modal">
+        <!-- Add Modal Content -->
+        <div class="modal-content">
+            <div id="spoiler">
+                <form action="javascript:void(0);" method="POST" id="AddGame" onsubmit="app.Add()">
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="addName">Name:</label>
+                            </td>
+                            <td>
+                                <input type="text" id="addName" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="addGenre">Genre:</label>
+                            </td>
+                            <td>
+                                <input type="text" id="addGenre" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="addDeveloper">Developer:</label>
+                            </td>
+                            <td>
+                                <input type="text" id="addDeveloper" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="addPrice">Price in Pesos:</label>
+                            </td>
+                            <td>
+                                <input type="number" id="addPrice" min="1" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="addStoreLink">Store Link URL:</label>
+                            </td>
+                            <td>
+                                <input type="text" id="addStoreLink" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="addImageLink">Cover Image URL:</label>
+                            </td>
+                            <td>
+                                <input type="text" id="addImageLink" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="addReleaseDate">Release Date:</label>
+                            </td>
+                            <td>
+                                <input type="date" id="addReleaseDate" required>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <input class="button" type="submit" value="Add" />
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div id="editModal" class="modal">
+        <!-- Edit Modal Content -->
+        <div class="modal-content">
+            <div id="spoiler">
+                <form action="javascript:void(0);" method="POST" id="saveEdit" onsubmit="app.Edit()">
+                    <table>
+                        <tr>
+                            <td>
+                                <label for="editName">Name:</label>
+                            </td>
+                            <td>
+                                <input type="text" id="editName" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="editGenre">Genre:</label>
+                            </td>
+                            <td>
+                                <input type="text" id="editGenre" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="editDeveloper">Developer:</label>
+                            </td>
+                            <td>
+                                <input type="text" id="editDeveloper" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="editPrice">Price in Pesos:</label>
+                            </td>
+                            <td>
+                                <input type="number" id="editPrice" min="1" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="editStoreLink">Store Link URL:</label>
+                            </td>
+                            <td>
+                                <input type="text" id="editStoreLink" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="editImageLink">Cover Image URL:</label>
+                            </td>
+                            <td>
+                                <input type="text" id="editImageLink" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="editReleaseDate">Release Date:</label>
+                            </td>
+                            <td>
+                                <input type="datetime-local" id="editReleaseDate" required>
+                            </td>
+                        </tr>
+                    </table>
+                    <input class="button" type="submit" value="Update" />
+                </form>
+                <br>
+
+                <button class="button" id="deleteBtn">Delete</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="MainBody" class="content">
+        <script src="Script.js"></script>
+    </div>
+    
+    
+
+</body>
+
+</html>
