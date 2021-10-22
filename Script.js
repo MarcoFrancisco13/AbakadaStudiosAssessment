@@ -6,6 +6,16 @@ var app = new function () {
     var addModal = document.getElementById("addModal");
     var editModal = document.getElementById("editModal");
     var addBtn = document.getElementById("addBtn");
+    var addCloseBtn = document.getElementById("addCloseBtn");
+    var editCloseBtn = document.getElementById("editCloseBtn");
+
+    addCloseBtn.onclick = function () {
+        addModal.style.display = "none";
+    }
+
+    editCloseBtn.onclick = function () {
+        editModal.style.display = "none";
+    }
 
     addBtn.onclick = function () {
         addModal.style.display = "block";
@@ -76,6 +86,7 @@ var app = new function () {
     this.BuildScreen = function () {
         var el = document.getElementById("MainBody");
         var data = ''
+        totalPrice = 0;
 
         // Previous body is cleared out so as to avoid duplicate items
         el.innerHTML = ""
@@ -83,6 +94,7 @@ var app = new function () {
         // For loop used to cycle through each component in the games array and building it with the corresponding data 
         if (games.length > 0) {
             for (i = 0; i < games.length; i++) {
+                totalPrice = Number(totalPrice) + Number(games[i].price)
                 data += `
                             <hr class="solid">
                             <div id = "game-component" style="display: flex" class = "content">
@@ -122,7 +134,9 @@ var app = new function () {
 
         // updating the total # of games currently in the array with console messages for debugging
         this.Count(games.length);
+        document.getElementById("totalPrice").innerHTML = "Total Price: Php " + totalPrice;
         console.warn('added', { data });
+        console.warn('price: ', { totalPrice });
         return el.innerHTML += data;
     };
 

@@ -9,7 +9,7 @@
 
 <body>
     <div class="header">
-        <h1 >
+        <h1>
             Steam Wish List
         </h1>
         <button id="addBtn" type="button" class="button"> Add Game </button>
@@ -23,6 +23,7 @@
         <div class="modal-content">
             <div id="spoiler">
                 <form action="javascript:void(0);" method="POST" id="AddGame" onsubmit="app.Add()">
+                    <span class="close" id="addCloseBtn">&times;</span>
                     <table>
                         <tr>
                             <td>
@@ -95,6 +96,7 @@
         <div class="modal-content">
             <div id="spoiler">
                 <form action="javascript:void(0);" method="POST" id="saveEdit" onsubmit="app.Edit()">
+                    <span class="close" id="editCloseBtn">&times;</span>
                     <table>
                         <tr>
                             <td>
@@ -149,7 +151,7 @@
                                 <label for="editReleaseDate">Release Date:</label>
                             </td>
                             <td>
-                                <input type="datetime-local" id="editReleaseDate" required>
+                                <input type="date" id="editReleaseDate" required>
                             </td>
                         </tr>
                     </table>
@@ -161,14 +163,17 @@
             </div>
         </div>
 
-    </div>
+    </div>    
 
     <div id="MainBody" class="content">
-        <script src="Script.js"></script>
     </div>
     
-    
+    <div class="footer">
+        <h1 class="price" id="totalPrice"> Total Price: </h1>
+    </div>
 
+
+    <script src="Script.js"></script>
 </body>
 
 </html>
